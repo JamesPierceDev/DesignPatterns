@@ -6,8 +6,8 @@
 #pragma comment(lib, "SDL2main.lib")
 #endif
 
-#include <SDL.h>
 #include <iostream>
+#include "Game.h"
 
 /// <summary>
 /// Program Entry Point
@@ -15,14 +15,16 @@
 /// <returns></returns>
 int main(int argc, char* argv[] )
 {
-	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
+	Game * game = new Game();
+	game->initialize();
+
+	while (game->isRunning())
 	{
-		std::cout << "SDL initialization failed, SDL Error: " << std::endl;
+		//handle events
+		game->update();
+		game->render();
 	}
-	else
-	{
-		std::cout << "SDL initialization succeeded!" << std::endl;
-	}
+	game->cleanUp();
 
 	std::cin.get();
 	return 0;

@@ -1,2 +1,4 @@
-﻿  Main.cpp
+﻿  Game.cpp
+  InputHandler.cpp
+  Generating Code...
   CommandPattern.vcxproj -> C:\Users\james\Desktop\Labs\Games Engineering\CommandPattern\Debug\CommandPattern.exe
