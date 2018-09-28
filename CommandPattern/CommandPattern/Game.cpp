@@ -6,8 +6,7 @@
 /// </summary>
 Game::Game()
 {
-	
-
+	is_Running = true;
 	SDL_Event event;
 	SDL_PollEvent(&event);
 	SDL_Delay(3000);
@@ -43,7 +42,7 @@ void Game::handleEvents()
 /// </summary>
 void Game::update()
 {
-
+	std::cout << "Running Game Loop" << std::endl;
 }
 
 /// <summary>
