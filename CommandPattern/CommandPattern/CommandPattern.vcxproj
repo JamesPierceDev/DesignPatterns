@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command.h" />
+    <ClInclude Include="CrouchCommand.h" />
     <ClInclude Include="FireCommand.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="InputHandler.h" />

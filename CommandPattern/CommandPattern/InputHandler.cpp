@@ -10,14 +10,14 @@ void InputHandler::handleInput()
 		{
 			if (e.key.keysym.sym == SDLK_SPACE)
 			{
-				//Do stuff for space
-				buttonSpace_->execute();
-
+				std::cout << "SPACE pressed" << std::endl;
+				jump->execute();
+				
 			}
 			else if (e.key.keysym.sym == SDLK_LCTRL)
 			{
-				//Do stuff for l-ctrl
-				buttonLCtrl_->execute();
+				std::cout << "CTRL pressed" << std::endl;
+				crouch->execute();
 			}
 		}
 	}

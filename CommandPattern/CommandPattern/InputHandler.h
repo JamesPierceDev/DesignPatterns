@@ -2,6 +2,10 @@
 #define INPUTHANDLER_H
 
 #include "Command.h"
+#include "JumpCommand.h"
+#include "CrouchCommand.h"
+#include "MacroCommand.h"
+#include <iostream>
 
 class InputHandler
 {
@@ -12,6 +16,8 @@ private:
 	Command * buttonShift_;
 	Command * buttonSpace_;
 	Command * buttonLCtrl_;
+	JumpCommand * jump;
+	CrouchCommand * crouch;
 };
 
 #endif

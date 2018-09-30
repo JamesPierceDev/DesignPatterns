@@ -2,6 +2,7 @@
 #define JUMPCOMMAND_H
 
 #include "Command.h"
+#include <iostream>
 
 class JumpCommand : public Command
 {

@@ -3,7 +3,7 @@
 
 #include "Command.h"
 #include <list>
-
+#include <vector>
 
 class MacroCommand : public Command
 {
@@ -12,8 +12,10 @@ public:
 	virtual void add(Command*);
 	virtual void remove(Command*);
 	virtual void execute();
+	virtual void undo(Command*);
+	virtual void redo(Command*);
 private:
-	std::list<Command*>* commands;
+	std::vector<Command *> commands;
 };
 
 #endif

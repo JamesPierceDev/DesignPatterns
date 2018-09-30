@@ -47,5 +47,8 @@
     <ClInclude Include="MacroCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CrouchCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

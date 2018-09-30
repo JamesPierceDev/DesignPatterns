@@ -10,6 +10,7 @@ Game::Game()
 	SDL_Event event;
 	SDL_PollEvent(&event);
 	SDL_Delay(3000);
+	handler = new InputHandler();
 }
 
 /// <summary>
@@ -42,7 +43,7 @@ void Game::handleEvents()
 /// </summary>
 void Game::update()
 {
-	std::cout << "Running Game Loop" << std::endl;
+	handler->handleInput();
 }
 
 /// <summary>
@@ -56,7 +57,7 @@ void Game::render()
 
 	if (m_renderer == nullptr)
 	{
-		SDL_Log("Could not create a renderer");
+		//SDL_Log("Could not create a renderer");
 	}
 
 	SDL_SetRenderDrawColor(m_renderer, 100, 149, 237, 255);
