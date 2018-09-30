@@ -3,6 +3,12 @@
 
 void InputHandler::handleInput()
 {
+	jump = new JumpCommand();
+	crouch = new CrouchCommand();
+	fire = new FireCommand();
+	melee = new MeleeCommand();
+	macro = new MacroCommand();
+
 	SDL_Event e;
 	while (SDL_PollEvent(&e))
 	{
@@ -10,14 +16,27 @@ void InputHandler::handleInput()
 		{
 			if (e.key.keysym.sym == SDLK_SPACE)
 			{
-				std::cout << "SPACE pressed" << std::endl;
 				jump->execute();
-				
+				macro->add(jump);
 			}
 			else if (e.key.keysym.sym == SDLK_LCTRL)
 			{
-				std::cout << "CTRL pressed" << std::endl;
 				crouch->execute();
+				macro->add(crouch);
+			}
+			else if (e.key.keysym.sym == SDLK_f)
+			{
+				fire->execute();
+				macro->add(fire);
+			}
+			else if (e.key.keysym.sym == SDLK_m)
+			{
+				melee->execute();
+				macro->add(melee);
+			}
+			else if (e.key.keysym.sym == SDLK_u)
+			{
+				
 			}
 		}
 	}

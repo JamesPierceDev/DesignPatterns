@@ -4,6 +4,7 @@
 #include "Command.h"
 #include <list>
 #include <vector>
+#include <stack>
 
 class MacroCommand : public Command
 {
@@ -16,6 +17,8 @@ public:
 	virtual void redo(Command*);
 private:
 	std::vector<Command *> commands;
+	std::stack<Command *> command_log;
+	std::stack<Command *> undone_commands;
 };
 
 #endif

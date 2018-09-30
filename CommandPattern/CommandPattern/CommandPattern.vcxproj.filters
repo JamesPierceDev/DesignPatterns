@@ -50,5 +50,8 @@
     <ClInclude Include="CrouchCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MeleeCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
