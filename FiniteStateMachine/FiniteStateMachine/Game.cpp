@@ -36,6 +36,7 @@ void Game::handleEvents()
 			{
 				break;
 			}
+
 		}
 		handler->handleInput(event);
 	}
@@ -55,8 +56,6 @@ void Game::update()
 void Game::render()
 {
 }
-
-
 
 /// <summary>
 /// 

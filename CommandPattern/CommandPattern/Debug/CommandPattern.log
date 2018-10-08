@@ -1,9 +1,2 @@
-﻿  InputHandler.cpp
-  Generating Code...
-  Compiling...
-  Main.cpp
-  Game.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  MacroCommand.cpp
-  CommandPattern.vcxproj -> C:\Users\james\Desktop\DesignPatterns\CommandPattern\Debug\CommandPattern.exe
+﻿  MacroCommand.cpp
+  CommandPattern.vcxproj -> C:\Users\james\Desktop\Labs\Games Engineering\DesignPatterns\CommandPattern\Debug\CommandPattern.exe

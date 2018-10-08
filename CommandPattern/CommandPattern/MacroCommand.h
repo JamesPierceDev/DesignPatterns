@@ -12,9 +12,10 @@ public:
 	MacroCommand();
 	virtual void add(Command*);
 	virtual void remove(Command*);
+	virtual void clear();
 	virtual void execute();
-	virtual void undo(Command*);
-	virtual void redo(Command*);
+	virtual void undo();
+	virtual void redo();
 private:
 	std::vector<Command *> commands;
 	std::stack<Command *> command_log;

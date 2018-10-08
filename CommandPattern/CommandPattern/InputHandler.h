@@ -1,6 +1,7 @@
 #ifndef INPUTHANDLER_H
 #define INPUTHANDLER_H
 
+#include <SDL.h>
 #include "Command.h"
 #include "JumpCommand.h"
 #include "CrouchCommand.h"
@@ -12,7 +13,8 @@
 class InputHandler
 {
 public:
-	void handleInput();
+	void init();
+	void handleInput(SDL_Event & e);
 private:
 	Command * buttonF_;
 	Command * buttonShift_;

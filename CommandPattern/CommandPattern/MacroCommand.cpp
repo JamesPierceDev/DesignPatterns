@@ -20,7 +20,6 @@ void MacroCommand::execute()
 	{
 		auto c = *iter; //Deref iterator to get object
 		c->execute(); //Call execute for that command
-		command_log.push(c); //Push that command onto stack
 	}
 }
 
@@ -28,23 +27,30 @@ void MacroCommand::execute()
 /// 
 /// </summary>
 /// <param name=""></param>
-void MacroCommand::undo(Command *)
+void MacroCommand::undo()
 {
-	//Add the last command performed to a stack
-	undone_commands.push(command_log.top());
-	//Pop the last command off the stack
-	command_log.pop();
-	std::cout << "Undid last command" << std::endl;
+	if (command_log.size() > 0)
+	{
+		//Add the last command performed to a stack
+		undone_commands.push(command_log.top());
+		//Pop the last command off the stack
+		command_log.pop();
+		std::cout << "Undid last command" << std::endl;
+	}
 }
 
 /// <summary>
 /// 
 /// </summary>
 /// <param name=""></param>
-void MacroCommand::redo(Command *)
+void MacroCommand::redo()
 {
-	commands.insert(commands.end(), undone_commands.top());
-	std::cout << "Redid last command" << std::endl;
+	if (undone_commands.size() > 0)
+	{
+		commands.insert(commands.end(), undone_commands.top());
+		std::cout << "Redid last command" << std::endl;
+		undone_commands.pop();
+	}
 }
 
 /// <summary>
@@ -55,6 +61,7 @@ void MacroCommand::redo(Command *)
 void MacroCommand::add(Command * c)
 {
 	commands.push_back(c);
+	command_log.push(c);
 }
 
 /// <summary>
@@ -77,3 +84,7 @@ void MacroCommand::remove(Command * c)
 	}
 }
 
+void MacroCommand::clear()
+{
+	commands.clear();
+}

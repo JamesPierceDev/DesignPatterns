@@ -12,7 +12,7 @@ public:
 	~Climbing() {};
 	void idle(Animation* a)
 	{
-		std::cout << "GOing from Climbing to Idling" << std::endl;
+		std::cout << "Going from Climbing to Idling" << std::endl;
 		a->setCurrent(new Idle());
 		delete this;
 	}

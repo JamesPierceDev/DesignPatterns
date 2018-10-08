@@ -4,6 +4,8 @@
 #include <iostream>
 #include "Animation.h"
 
+class Animation;
+
 class State
 {
 public:
