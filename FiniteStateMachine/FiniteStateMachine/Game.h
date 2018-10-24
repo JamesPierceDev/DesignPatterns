@@ -22,12 +22,12 @@ public:
 private:
 	SDL_Window * m_window; 
 	SDL_Renderer * m_renderer;
-	InputHandler * handler;
+	InputHandler * handler; 
 	Animation * a;
 	AnimatedSprite * m_sprite;
 	bool is_Running;
 
-	SDL_Texture * walk_Texture;
+	SDL_Texture* walk_Texture;
 };
 
 #endif
