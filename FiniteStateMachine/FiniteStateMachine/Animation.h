@@ -2,13 +2,15 @@
 #define ANIMATION_H
 
 #include "State.h"
+#include "AnimatedSprite.h"
+#include <SDL.h>
 
 class Animation
 {
 	class State* current;
 	class State* previous;
 public:
-	Animation();
+	Animation(AnimatedSprite * a);
 	void setCurrent(State* s)
 	{
 		current = s;
@@ -20,6 +22,8 @@ public:
 	void idle();
 	void jumping();
 	void climbing();
+private:
+	AnimatedSprite * a_sprite;
 };
 
 #endif

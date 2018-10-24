@@ -1,10 +1,5 @@
 #include "InputHandler.h"
 
-void InputHandler::init()
-{
-	a = new Animation();
-}
-
 /// <summary>
 /// 
 /// </summary>
@@ -17,16 +12,18 @@ void InputHandler::handleInput(SDL_Event & e)
 		{
 			if (e.key.keysym.sym == SDLK_SPACE)
 			{
-				a->jumping();
+
 			}
 			else if (e.key.keysym.sym == SDLK_LCTRL)
 			{
-				a->climbing();
+
 			}
 		}
 		else
 		{
-			a->idle();
+
 		}
 	}
 }
+
+

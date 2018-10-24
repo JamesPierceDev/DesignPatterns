@@ -3,7 +3,7 @@
 
 void InputHandler::init()
 {
-	jump = new JumpCommand();
+	jump = new JumpCommand(); // receiver
 	crouch = new CrouchCommand();
 	fire = new FireCommand();
 	melee = new MeleeCommand();
@@ -11,7 +11,7 @@ void InputHandler::init()
 }
 
 /// <summary>
-/// 
+/// Client...apparently
 /// </summary>
 /// <param name="e"></param>
 void InputHandler::handleInput(SDL_Event & e)

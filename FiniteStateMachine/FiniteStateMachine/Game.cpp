@@ -11,7 +11,17 @@ Game::Game()
 	SDL_PollEvent(&event);
 	SDL_Delay(3000);
 	handler = new InputHandler();
-	handler->init();
+	m_renderer = SDL_CreateRenderer(m_window, -1, 0);
+	std::string fp = "../FiniteStateMachine/assets/mario_sprite_run.png";
+
+	walk_Texture = IMG_LoadTexture(m_renderer, fp.c_str());
+
+	if (walk_Texture == NULL)
+	{
+		std::cout << "Failed to load image" << std::endl;
+	}
+	m_sprite = new AnimatedSprite(walk_Texture);
+	a = new Animation(m_sprite);
 }
 
 /// <summary>
@@ -36,10 +46,11 @@ void Game::handleEvents()
 			{
 				break;
 			}
-
+			update();
 		}
 		handler->handleInput(event);
 	}
+	render();
 }
 
 /// <summary>
@@ -55,6 +66,11 @@ void Game::update()
 /// </summary>
 void Game::render()
 {
+	std::cout << "Render loop" << std::endl;
+	SDL_RenderClear(m_renderer);
+
+	SDL_RenderPresent(m_renderer);
+
 }
 
 /// <summary>

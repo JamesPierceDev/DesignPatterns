@@ -8,10 +8,9 @@
 class InputHandler
 {
 public:
-	void init();
 	void handleInput(SDL_Event & e);
 private:
-	Animation * a;
+
 };
 
 #endif

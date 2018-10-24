@@ -1,7 +1,8 @@
 #include "Animation.h"
 #include "Idle.h"
 
-Animation::Animation()
+Animation::Animation(AnimatedSprite * a) :
+	a_sprite(a)
 {
 	current = new Idle();
 }
@@ -9,7 +10,6 @@ Animation::Animation()
 void Animation::idle()
 {
 	this->setPrevious(this->current);
-
 	current->idle(this);
 }
 

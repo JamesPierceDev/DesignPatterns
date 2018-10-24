@@ -35,7 +35,7 @@ void MacroCommand::undo()
 		undone_commands.push(command_log.top());
 		//Pop the last command off the stack
 		command_log.pop();
-		std::cout << "Undid last command" << std::endl;
+		std::cout << "Undo last command" << std::endl;
 	}
 }
 
@@ -48,7 +48,7 @@ void MacroCommand::redo()
 	if (undone_commands.size() > 0)
 	{
 		commands.insert(commands.end(), undone_commands.top());
-		std::cout << "Redid last command" << std::endl;
+		std::cout << "Redo last command" << std::endl;
 		undone_commands.pop();
 	}
 }
