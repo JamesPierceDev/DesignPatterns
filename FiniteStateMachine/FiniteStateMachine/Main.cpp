@@ -12,15 +12,7 @@
 int main(int argc, char* argv[])
 {
 	Game * game = new Game();
-	game->initialize();
-
-	while (game->isRunning())
-	{
-		//handle events
-		game->update();
-		game->render();
-	}
-	game->cleanUp();
+	game->run();
 
 	return 0;
 }
