@@ -3,14 +3,12 @@
 #pragma comment(lib, "SDL2_image.lib")
 
 #include <iostream>
+#include "Game.h"
 
-int main(void*)
+int main(int argc, char * argv[])
 {
-
-	while (true)
-	{
-		//update here
-	}
-
+	Game * game;
+	game = new Game();
+	game->run();
 	return 0;
 }
