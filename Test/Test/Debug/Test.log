@@ -1,3 +1,6 @@
-﻿  Main.cpp
-c:\users\james\desktop\labs\games engineering\test\test\main.cpp(55): warning C4018: '<': signed/unsigned mismatch
-  Test.vcxproj -> C:\Users\james\Desktop\Labs\Games Engineering\Test\Debug\Test.exe
+﻿  Lottery.cpp
+c:\users\james\desktop\test\test\lottery.cpp(114): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+c:\users\james\desktop\test\test\main.cpp(57): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Test.vcxproj -> C:\Users\james\Desktop\Test\Debug\Test.exe

@@ -87,6 +87,8 @@ Game::Game()
 	m_dog->addComponent(dog_control);
 	cs->addEntity(m_dog);
 
+	
+
 	//as->addEntity(m_dog);
 }
 

@@ -11,7 +11,8 @@ public:
 	Lottery();
 	~Lottery();
 
-	void getNumbers();
+	bool getNumbers();
+	bool testNumbers(std::vector<int>);
 	void genNumbers();
 	void checkNumbers();
 

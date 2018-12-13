@@ -7,7 +7,6 @@
 
 std::vector<int> getNumbers()
 {
-	Test t;
 	std::vector<int> numbers;
 	std::vector<int> checklst;
 	for (int i = 0; i < 6; i++)
@@ -15,11 +14,14 @@ std::vector<int> getNumbers()
 		int number;
 		std::cout << "Enter a lotto number" << std::endl;
 		std::cin >> number;
-		//t.TestRange(number); // Assert Test Range 0->46
-		//assert(number > 0 && number < 47); //Assert check input is greater than 0 and less than 47
+		if (number > 46 || number < 1)
+		{
+			std::cout << "Invalid number" << std::endl;
+			std::cin >> number;
+		}
+	
 		if (checklst.size() > 0)
 		{
-			t.CheckRepetition(number, checklst);
 			assert(std::find(checklst.begin(), checklst.end(), number) != checklst.end()==false); //Assert check number not already entered
 		}
 		checklst.push_back(number); //Vector holds list of number to check repeated number against
@@ -61,16 +63,13 @@ void checkNumbers(std::vector<int> n, std::vector<int> r)
 	}
 	std::cout << "You've matched: " << count << " " << "numbers!" << std::endl;
 }
-//
-//int main(void)
-//{
-//	Lottery * l;
-//	l = new Lottery();
-//
-//	l->getNumbers(); //Get numbers from user
-//	l->genNumbers(); //Generate winning numbers
-//	l->checkNumbers(); //Check user numbers against winning numbers
-//
-//	system("pause");
-//	return 0;
-//}
+
+int main(void)
+{
+	std::vector<int> numbers = getNumbers();
+	std::vector<int> winning_numbers = gennumbers();
+	checkNumbers(numbers, winning_numbers); //Check user numbers against winning numbers
+
+	system("pause");
+	return 0;
+}

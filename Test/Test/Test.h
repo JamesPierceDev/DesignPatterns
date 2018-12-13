@@ -31,18 +31,19 @@ private:
 
 };
 
-int main(void)
-{
-	std::vector<int> m_numbers = { 1, 2, 3, 4, 5, 6 };
-	Test t;
-
-	t.CheckRepetition(19, m_numbers);
-
-	for (auto i : m_numbers)
-	{
-		t.TestRange(i);
-	}
-	return 0;
-}
+//int main(void)
+//{
+//	std::vector<int> m_numbers = { 1, 2, 3, 4, 5, 6 };
+//	Test t;
+//
+//	t.CheckRepetition(19, m_numbers);
+//
+//	for (auto i : m_numbers)
+//	{
+//		t.TestRange(i);
+//	}
+//	system("pause");
+//	return 0;
+//}
 
 #endif

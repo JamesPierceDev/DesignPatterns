@@ -1,0 +1,5 @@
+﻿  Lottery.cpp
+c:\users\james\desktop\test\test\lottery.cpp(114): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  Generating Code...
+  UnitTest.vcxproj -> C:\Users\james\Desktop\Test\Debug\UnitTest.exe

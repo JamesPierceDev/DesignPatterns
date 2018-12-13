@@ -7,10 +7,14 @@ Lottery::Lottery() : count(0)
 {
 }
 
+Lottery::~Lottery()
+{
+}
+
 /// <summary>
 /// 
 /// </summary>
-void Lottery::getNumbers()
+bool Lottery::getNumbers()
 {
 	for (int i = 0; i < 6; i++)
 	{
@@ -20,13 +24,70 @@ void Lottery::getNumbers()
 
 		if (rep_numbers.size() > 0)
 		{
-			if (std::find(rep_numbers.begin(), rep_numbers.end(), number) != rep_numbers.end() == false)
-			{
-				input_numbers.push_back(number);
-				rep_numbers.push_back(number);
-			}
+			input_numbers.push_back(number);
+			rep_numbers.push_back(number);
+		}
+		else
+		{
+			return false;
 		}
 	}
+
+	for (auto i : input_numbers)
+	{
+		//If any of the numbers match
+		if (std::find(rep_numbers.begin(), rep_numbers.end(), i) != rep_numbers.end() == true)
+		{
+			return false;
+		}
+		else
+		{
+			if (i < 1 || i > 46)
+			{
+				return false;
+			}
+			rep_numbers.push_back(i);
+		}
+	}
+	return true;
+}
+
+bool Lottery::testNumbers(std::vector<int> v)
+{
+
+	for (auto i : v)
+	{
+		int number;
+		number = i;
+
+		if (rep_numbers.size() > 0)
+		{
+			input_numbers.push_back(number);
+			rep_numbers.push_back(number);
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	for (auto i : input_numbers)
+	{
+		//If any of the numbers match
+		if (std::find(rep_numbers.begin(), rep_numbers.end(), i) != rep_numbers.end() == true)
+		{
+			return false;
+		}
+		else
+		{
+			if (i < 1 || i > 46)
+			{
+				return false;
+			}
+			rep_numbers.push_back(i);
+		}
+	}
+	return true;
 }
 
 /// <summary>
