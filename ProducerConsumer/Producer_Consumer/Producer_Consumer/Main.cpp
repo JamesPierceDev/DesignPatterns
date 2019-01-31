@@ -2,7 +2,6 @@
 #include <iostream>
 #include <mutex>
 #include <condition_variable>
-#include <queue>
 
 //C++ mutual exclusion object
 std::mutex mutex;
@@ -15,15 +14,15 @@ void consumer(int n)
 {
 	//Required for std::condition_variable to block the thread
 	std::unique_lock<std::mutex> lock(mutex);
-	
 	while (thread_count == 0)
 	{
 		//Causes current thread to block until the condition
 		//variable is notified
 		cv.wait(lock);
 	}
+
 	std::cout << "n: " << n + 1 << std::endl;
-	std::cout << "Threads running conurrently: " << thread_count - 1 << std::endl;
+	std::cout << "Threads running concurrently: " << thread_count - 1 << std::endl;
 	thread_count--;
 }
 
@@ -32,6 +31,7 @@ void producer(int n)
 {
 	std::unique_lock<std::mutex> lock(mutex);
 	thread_count++;
+
 	//Notifies the condition variable to stop blocking
 	//the incoming thread
 	cv.notify_one();
